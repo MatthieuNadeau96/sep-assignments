@@ -7,10 +7,12 @@ class MyStack
   end
 
   def push(item)
+    @top = item
     @stack.unshift(item)
   end
 
   def pop
+    @top = stack[1]
     @stack.shift
   end
 
