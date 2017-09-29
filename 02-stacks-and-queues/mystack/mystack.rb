@@ -7,11 +7,14 @@ class MyStack
   end
 
   def push(item)
+    @stack.unshift(item)
   end
 
   def pop
+    @stack.shift
   end
 
   def empty?
+    @stack.length === 0
   end
 end
