@@ -9,26 +9,39 @@ class Line
   end
 
   def join(person)
+    @members << person
   end
 
   def leave(person)
+    @members.delete(person)
   end
 
   def front
+    @members.first
   end
 
   def middle
+    mid = (@members / 2).floor
+    @members[mid]
   end
 
   def back
+    @members.last
   end
 
   def search(person)
+    i = index(person)
+    i ? @members : nil
   end
 
   private
 
   def index(person)
+    i = 0
+    @members.each do
+      @members[i] == person ? break : i += 1
+    end
+    i < @members.length ? i : nil
   end
 
 end
